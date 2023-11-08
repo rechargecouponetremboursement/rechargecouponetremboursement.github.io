@@ -1,0 +1,698 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap");
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /* Color mode HSL(hue, saturation, lightness) */
+
+  --first-color: hsl(230, 77%, 58%);
+  --first-color-dark: hsl(231, 39%, 29%);
+  --first-color-light: hsl(230, 100%, 83%);
+  --title-color: hsl(247, 27%, 31%);
+  --text-color3: hsl(0, 0%, 41%);
+  --text-color2: hsl(0, 0%, 100%);
+  --container-color: rgb(201, 219, 252);
+  --text-color4: hsl(0, 0%, 87%);
+  --white: #fff;
+
+  /*========== Font and typography ==========*/
+  /* .5rem = 8px | 1rem = 16px ... */
+  --body-font: "Jost", sans-serif;
+  --big-font-size: 3rem;
+  --h1-font-size: 2.5rem;
+  --h2-font-size: 2.25rem;
+  --h3-font-size: 1.5rem;
+  --larger-font-size: 1.25rem;
+  --large-font-size: 1.125rem;
+
+  /*========== Font weight ==========*/
+  --weight-300: 300;
+  --weight-400: 400;
+  --weight-600: 600;
+
+  /*===============View==============*/
+  --main-transition: 0.3s ease-in-out;
+}
+/*=============== BASE ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input,
+textarea,
+button,
+body {
+  font-family: var(--body-font);
+  font-size: 1rem;
+}
+
+main {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+input,
+textarea,
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+form p {
+  padding-bottom: 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--weight-600);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  margin-bottom: 6rem;
+}
+
+.form-banner {
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1200px;
+  padding-inline: 1rem;
+}
+
+.section__title {
+  font-weight: var(--weight-400);
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.section__title::before {
+  content: attr(data-title);
+  display: block;
+  color: var(--first-color);
+  font-size: var(--larger-font-size);
+  font-weight: var(--weight-600);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+/* Styliser le formulaire de recharge */
+.recharge-form {
+  background-color: var(--container-color);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.recharge-form label {
+  display: block;
+  font-size: var(--large-font-size);
+  margin-bottom: 0.5rem;
+}
+
+.recharge-form select:focus,
+.recharge-form input:focus {
+  outline: none;
+}
+
+.recharge-form select,
+.recharge-form input[type="tel"],
+.recharge-form input[type="text"],
+.recharge-form input[type="number"],
+.recharge-form input[type="email"],
+.recharge-form input[type="password"], /* Ajoute cette ligne */
+.recharge-form input[type="checkbox"] {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 2px solid var(--white);
+  margin-bottom: 1rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.recharge-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.recharge-form button[type="submit"] {
+  background-color: var(--first-color);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.recharge-form input[type="submit"]:hover {
+  background-color: var(--first-color-dark);
+}
+
+/* Afficher le code de recharge comme champ de mot de passe */
+.recharge-form input[type="password"] {
+  font-family: "Courier New", monospace; /* Pour afficher les caractères comme des astérisques */
+}
+
+.title-center {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+/*=============== HEADER ===============*/
+.header {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  color: var(--first-color);
+  font-size: var(--h2-font-size);
+  font-weight: var(--weight-600);
+  padding: 0.3rem 1rem;
+}
+
+.brand-icon {
+  display: flex;
+  align-items: center;
+  height: 55px;
+}
+
+.burger-content {
+  padding: 1rem;
+}
+
+.burger-content .line {
+  width: 30px;
+  height: 3px;
+  background-color: var(--first-color);
+  transition: var(--main-transition);
+}
+
+.burger-content #line1 {
+  transform: translateY(-4px);
+}
+
+.burger-content #line3 {
+  transform: translateY(4px);
+}
+
+.burger-btn.active #line1 {
+  transform: translateY(4px) rotateZ(-45deg);
+}
+
+.burger-btn.active #line2 {
+  opacity: 0;
+}
+
+.burger-btn.active #line3 {
+  transform: translateY(-2px) rotate(45deg);
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 61px;
+  left: 0;
+  right: 0;
+  height: 0;
+  opacity: 0;
+  background-color: var(--container-color);
+  width: 100%;
+  transition: var(--main-transition);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.nav-menu.active {
+  height: 500px;
+  opacity: 1;
+  right: 0;
+}
+
+.nav-menu .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  height: 500px;
+}
+
+.nav-menu .list-item {
+  display: flex;
+  align-items: center;
+  color: var(--first-color-dark);
+  padding: 1rem;
+}
+
+.list-item .icon {
+  margin: 0 10px;
+}
+/*=============== Home ===============*/
+
+.home {
+  background-image: url("./img/home3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home.contact {
+  background-image: url("./img/img1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home.sell {
+  background-image: url("./img/sell.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.home .container {
+  position: relative;
+  padding-top: 100px;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.837);
+}
+
+.home.sell .container {
+  background-color: rgba(9, 23, 44, 0.4);
+}
+
+.home.contact .container {
+  background-color: rgba(3, 68, 188, 0.6);
+}
+
+.home h6 {
+  padding-bottom: 1.5rem;
+  color: var(--white);
+}
+
+.home h1 {
+  font-size: 1.5rem;
+  font-weight: var(--weight-600);
+  padding-bottom: 1.5rem;
+  color: var(--white);
+}
+
+.home span {
+  font-weight: var(--weight-300);
+}
+
+.home .description {
+  font-size: 1rem;
+  color: var(--text-color4);
+  line-height: 1.5;
+}
+
+.home img {
+  margin: 1rem auto;
+  border-radius: 10px;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-evenly;
+  position: relative;
+  padding: 2rem;
+  z-index: 3;
+  width: 100%;
+}
+
+button a {
+  display: block;
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  background-color: var(--first-color);
+  transition: var(--main-transition);
+}
+
+button.check a {
+  width: 160px;
+}
+
+button.check a:hover {
+  scale: 1.1;
+  background-color: var(--first-color-light);
+}
+
+button.sell a {
+  width: auto;
+  border: 2px solid var(--first-color);
+  background-color: transparent;
+}
+
+button.sell a:hover {
+  scale: 1.1;
+  border: 2px solid var(--first-color-light);
+}
+
+button a span {
+  font-family: Sans-Serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button.contact {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+/*=============== Helps section ===============*/
+
+.help-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.help-item {
+  position: relative;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.help-item::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  background-color: var(--first-color);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+}
+
+.help-item .title {
+  color: var(--first-color);
+}
+
+.help-item .item-data {
+  display: flex;
+  align-items: center;
+}
+
+.help-item .item-data img {
+  width: 80px;
+  height: 80px;
+}
+
+/*=============== CONTACT ===============*/
+
+.contact__container {
+  grid-template-columns: 5fr 7fr;
+  align-items: flex-start;
+}
+
+.contact__item {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 1.25rem;
+}
+
+.contact__item:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+
+.contact__icon {
+  color: var(--first-color);
+  font-size: var(--large-font-size);
+  line-height: 1.8;
+}
+
+.contact__title {
+  font-size: var(--larger-font-size);
+}
+
+.contact__data {
+  font-size: var(--large-font-size);
+}
+
+/*==========================Form==================*/
+
+.form-nav-list {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  border-radius: 10px;
+  background-color: var(--first-color-light);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-nav-item {
+  height: 3rem;
+  min-width: 4rem;
+  line-height: 3rem;
+  text-align: center;
+  color: white;
+  margin: 0.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  transition: 0.3s ease-in-out;
+}
+
+.form-nav-item.active {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  background-color: var(--first-color);
+}
+
+#shield h3 {
+  margin-bottom: 2rem;
+}
+
+.form-block-item {
+  display: none;
+}
+
+.recharge-form.sell {
+  display: block;
+}
+
+.form-block-item.active {
+  display: block;
+}
+
+.form__group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.25rem;
+}
+
+.input__control {
+  color: var(--title-color);
+  background-color: var(--container-color);
+  padding: 0.9rem 0.75rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.textarea {
+  height: 140px;
+  resize: none;
+}
+
+.contact__btn {
+  float: right;
+}
+
+/*===============Card Block===============*/
+
+.card-list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card-list img {
+  width: 100px;
+  height: 80px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/*=============== TESTIMONIALS ===============*/
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.testimonials-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 350px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-inline: auto;
+  padding: 1rem;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.testimonials-item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-color: var(--first-color);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.testimonials-item::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  content: "";
+  background-color: var(--first-color);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(50%, 50%);
+}
+
+.testimonials-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonials-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonials-description {
+  padding-bottom: 1rem;
+}
+/* ===================footer styling=================== */
+
+.footer {
+  background-color: var(--first-color);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: justify-content;
+  gap: 2rem;
+  color: var(--white);
+}
+
+.footer h2 {
+  color: white;
+  font-size: var(--h3-font-size);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.footer p {
+  padding-bottom: 2rem;
+}
+
+.footer-item {
+  margin: auto 1rem;
+  padding: 1rem;
+}
+
+.list-item {
+  padding: 1rem;
+}
+
+.footer .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+}
+
+.footer input {
+  padding: 0.5rem;
+  border: solid 2px var;
+  border-radius: 10px;
+  background-color: var(--white);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.footer button {
+  display: block;
+  color: var(--white);
+  width: 100px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: rgb(43, 211, 102);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.copyright {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/*=============== Page de remboursement ===============*/
+
+.sell-img {
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.payment-img {
+  margin-bottom: 4rem;
+  margin-inline: auto;
+}
