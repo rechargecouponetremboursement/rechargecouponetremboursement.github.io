@@ -306,7 +306,7 @@ section {
   position: relative;
   padding-top: 100px;
   z-index: 5;
-  background-color: rgba(0, 0, 0, 0.837);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .home.sell .container {
@@ -314,7 +314,7 @@ section {
 }
 
 .home.contact .container {
-  background-color: rgba(3, 68, 188, 0.6);
+  background-color: rgba(12, 68, 170, 0.6);
 }
 
 .home h6 {
