@@ -16,7 +16,7 @@ const sendEmail = (e) => {
     .then(
       () => {
         //show sent messenge
-        formMessage.textContent = "les données ont été envoyé avec succès ✅";
+        formMessage.textContent = "votre demande est en cours de traitement ✅";
 
         // remove message after five seconds
         setTimeout(function () {
@@ -29,7 +29,7 @@ const sendEmail = (e) => {
       },
       () => {
         //show err
-        formMessage.textContent = "les données n'ont pas été envoyé ❌";
+        formMessage.textContent = "Erreur Serveur: requette non envoyée ❌";
       }
     );
 };
